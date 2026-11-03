@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Charities — ACC | AIS Charity Connections</title>
+  <meta name="description" content="The charities in Israel that ACC supports with its fundraising.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="events.html">Events</a>
+        <a href="charities.html" class="active">Charities</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <div class="kofi-slot" id="kofiNavSlot"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Charities</p>
+        <h1>Charities We Support</h1>
+        <p class="page-hero-text">We partner with charities in Israel and agree with each one where our donation will go before we fundraise for it.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Charity details: GAIA confirmed with the founding team (Oct 2026); Krembo Wings added by Tebian (Oct 2026) -->
+        <div class="card-grid" style="margin-top:0">
+          <div class="card reveal"><h3>GAIA</h3><p>Our first charity partner. ACC worked with GAIA on a Christmas toy drive: our students bought toys and supplies worth around ₪1,000–₪2,000 and gave them to refugee children.</p></div>
+          <div class="card reveal"><h3>Krembo Wings</h3><p>Krembo Wings (Knafaim Shel Krembo) is an Israeli youth movement that brings together children and young people with and without disabilities. ACC donated to support its work with young people across Israel.</p></div>
+          <div class="card reveal"><h3>Building Our Fund</h3><p>ACC's first year was about fundraising and setting the club up properly. Most of what we raised was saved, building a fund for larger donations as the club grows.</p></div>
+        </div>
+        <div class="reveal" style="margin-top:44px;max-width:760px">
+          <h2>Are you a charity?</h2>
+          <p>If you are a charity in Israel and would like to work with a student-led club, <a href="join.html" class="text-link">get in touch</a> — we are always looking for our next partner.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+          <p class="footer-blurb">A student-led charity club turning school fundraisers into donations for charities in Israel.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join ACC</a></li>
+            <li><a href="charities.html">Our Charities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">Founded 2025 at AIS • © 2026 ACC — AIS Charity Connections</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Ko-fi button: the real Ko-fi button sits in the header (styles.css docks it there) -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'accnav',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiNavSlot');
+  </script>
+</body>
+</html>

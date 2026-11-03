@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACC — AIS Charity Connections</title>
+  <meta name="description" content="ACC — AIS Charity Connections is a student-led charity club turning school fundraisers into donations for charities in Israel.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="events.html">Events</a>
+        <a href="charities.html">Charities</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <div class="kofi-slot" id="kofiNavSlot"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <p class="eyebrow">Founded 2025 • Student-Led • AIS</p>
+          <h1>Students Giving Back To The Community</h1>
+          <p class="hero-text">ACC — AIS Charity Connections is a student-led club turning school fundraisers into real donations for charities across Israel.</p>
+          <div class="hero-buttons">
+            <div class="kofi-slot" id="kofiHeroSlot"></div>
+            <a href="impact.html" class="btn btn-outline">See Our Impact</a>
+          </div>
+          <p class="trust-bar">Founded 2025 &nbsp;•&nbsp; Student-Led &nbsp;•&nbsp; Fundraisers → Donations in Israel</p>
+        </div>
+        <img class="hero-img reveal visible" src="images/hero.jpg" alt="ACC students at a fundraiser">
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Who We Are</p>
+          <h2>A student club with a simple idea</h2>
+          <p class="section-intro">ACC was founded in 2025 by seniors at AIS who wanted students to do more than talk about helping — they wanted to organise it. When they graduated, the club was handed over to the current team, who have carried it on since.</p>
+          <a href="about.html" class="text-link">More about ACC →</a>
+        </div>
+        <div class="stats-grid" style="margin-top:36px">
+          <div class="stat reveal"><strong>&gt; ₪10 000</strong><span>Raised</span></div>
+          <div class="stat reveal"><strong>3</strong><span>Charities Supported</span></div>
+          <div class="stat reveal"><strong> &gt; 25</strong><span>Fundraisers Held</span></div>
+          <div class="stat reveal"><strong>5</strong><span>Student Leaders</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <div class="container">
+        <div class="reveal">
+          <p class="eyebrow">Featured Fundraiser</p>
+          <h2>Candy Stall</h2>
+        </div>
+        <div class="card-grid" style="grid-template-columns:1fr;max-width:760px">
+          <article class="card event-card reveal">
+            <img src="images/events/fundraiser-1.jpg" alt="Candy Stall fundraiser">
+            <div class="card-body">
+              <h3>Candy Stall</h3>
+              <p class="meta">24 September 2026 • ₪200 raised</p>
+              <p>Our lunchtime candy stall: we sold candy to students at lunch and raised ₪200 for the club.</p>
+              <p style="margin-top:12px"><a href="events.html" class="text-link">See all fundraisers →</a></p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner reveal">
+          <h2>Every shekel counts</h2>
+          <p>Donate to ACC and we pass it on to our charity partners in Israel through our school fundraisers.</p>
+          <div class="kofi-slot" id="kofiCtaSlot"></div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+          <p class="footer-blurb">A student-led charity club turning school fundraisers into donations for charities in Israel.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join ACC</a></li>
+            <li><a href="charities.html">Our Charities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">Founded 2025 at AIS • © 2026 ACC — AIS Charity Connections</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Ko-fi buttons: the real Ko-fi buttons sit in the header, hero and CTA banner (styles.css docks them there) -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'accnav',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiNavSlot');
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'acchero',
+      'floating-chat.donateButton.text': 'Donate Now',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiHeroSlot');
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'acccta',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiCtaSlot');
+  </script>
+</body>
+</html>

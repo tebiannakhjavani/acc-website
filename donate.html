@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate — ACC | AIS Charity Connections</title>
+  <meta name="description" content="Donate to ACC — AIS Charity Connections and support charities in Israel.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="events.html">Events</a>
+        <a href="charities.html">Charities</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <div class="kofi-slot" id="kofiNavSlot"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Donate</p>
+        <h1>Support ACC</h1>
+        <p class="page-hero-text">Your donation goes into ACC's fundraising total, which we donate to charities in Israel.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="donate-box reveal visible">
+          <h2>Make a donation</h2>
+          <p class="section-intro">Donate to ACC and we pass it on to our charity partners in Israel through our school fundraisers. Give once, or set up a small monthly donation — every shekel counts.</p>
+
+          <p class="section-intro">Tap the <strong>Donate</strong> button in the menu at the top of the page — our Ko-fi donation panel opens right here on the site. Pick any amount, one-time or monthly, and pay by card or PayPal.</p>
+          <p class="donate-trust">100% of donations go to ACC's fundraising total, which we donate to charities in Israel.</p>
+          <p class="form-note">Rather use the Ko-fi site? <a href="https://ko-fi.com/aischarityconnections" target="_blank" rel="noopener" class="text-link">Donate on ko-fi.com instead →</a></p>
+        </div>
+
+        <div class="reveal" style="text-align:center;margin-top:36px">
+          <p>Prefer to help another way? <a href="join.html" class="text-link">Join ACC or send us a message →</a></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+          <p class="footer-blurb">A student-led charity club turning school fundraisers into donations for charities in Israel.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join ACC</a></li>
+            <li><a href="charities.html">Our Charities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">Founded 2025 at AIS • © 2026 ACC — AIS Charity Connections</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Ko-fi button: the real Ko-fi button sits in the header (styles.css docks it there) -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'accnav',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiNavSlot');
+  </script>
+</body>
+</html>

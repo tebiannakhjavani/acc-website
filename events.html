@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events — ACC | AIS Charity Connections</title>
+  <meta name="description" content="ACC fundraisers and events at AIS, from our Candy Stall to what's coming next.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="events.html" class="active">Events</a>
+        <a href="charities.html">Charities</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <div class="kofi-slot" id="kofiNavSlot"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Events</p>
+        <h1>Fundraisers &amp; Events</h1>
+        <p class="page-hero-text">Every ACC fundraiser is planned, promoted, and run by students at school.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <!-- Replace the bracket text and images/events/fundraiser-1.jpg etc. as you run more fundraisers -->
+        <div class="card-grid" style="margin-top:0">
+          <article class="card event-card reveal">
+            <img src="images/events/fundraiser-1.jpg" alt="Candy Stall fundraiser">
+            <div class="card-body">
+              <h3>Candy Stall</h3>
+              <p class="meta">24 September 2026 • ₪200 raised</p>
+              <p>Our lunchtime candy stall: we sold candy to students at lunch and raised ₪200 for the club.</p>
+            </div>
+          </article>
+          <article class="card event-card reveal">
+            <img src="images/events/fundraiser-2.jpg" alt="Christmas Toy Drive with GAIA">
+            <div class="card-body">
+              <h3>Christmas Toy Drive</h3>
+              <p class="meta">December 2025 • With GAIA</p>
+              <p>For our first charity partnership, ACC teamed up with GAIA: we bought toys and supplies and gave them to refugee children as part of a Christmas toy drive.</p>
+            </div>
+          </article>
+          <article class="card event-card reveal">
+            <img src="images/events/fundraiser-3.jpg" alt="ACC fundraiser coming soon">
+            <div class="card-body">
+              <h3>Next Fundraiser — Coming Soon</h3>
+              <p class="meta">This school year</p>
+              <p>Our next fundraiser is being planned by the current team. Want to help run it? Join ACC and get involved from the next meeting.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+          <p class="footer-blurb">A student-led charity club turning school fundraisers into donations for charities in Israel.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join ACC</a></li>
+            <li><a href="charities.html">Our Charities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">Founded 2025 at AIS • © 2026 ACC — AIS Charity Connections</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Ko-fi button: the real Ko-fi button sits in the header (styles.css docks it there) -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'accnav',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiNavSlot');
+  </script>
+</body>
+</html>

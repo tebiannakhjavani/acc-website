@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — ACC | AIS Charity Connections</title>
+  <meta name="description" content="About ACC — AIS Charity Connections, a student-led charity club founded in 2025 at AIS.">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="nav container">
+      <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="about.html" class="active">About</a>
+        <a href="impact.html">Impact</a>
+        <a href="events.html">Events</a>
+        <a href="charities.html">Charities</a>
+        <a href="team.html">Team</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="join.html">Join Us</a>
+        <div class="kofi-slot" id="kofiNavSlot"></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">About Us</p>
+        <h1>About ACC</h1>
+        <p class="page-hero-text">Founded by seniors, carried on by students — a school charity club built to keep giving back, year after year.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="reveal">
+          <h2>Our story</h2>
+          <p style="margin-bottom:14px;max-width:760px">ACC was founded in 2025 by seniors at AIS who wanted students to do more than talk about helping — they wanted to organise it. When they graduated, the club was handed over to the current team, who have carried it on since.</p>
+          <p style="max-width:760px">We run fundraisers at school, partner with charities in Israel, and donate what we raise where it can do the most good. Every event is planned, promoted, and run by students. Our first partnership, with GAIA, saw students buy toys and supplies for refugee children as part of a Christmas toy drive.</p>
+        </div>
+        <div class="card-grid">
+          <div class="card reveal"><h3>Student-Led</h3><p>Every fundraiser is organised by students, from the first idea to the final donation.</p></div>
+          <div class="card reveal"><h3>Community First</h3><p>We bring the whole school together around causes that matter locally.</p></div>
+          <div class="card reveal"><h3>Real Impact</h3><p>Money raised at school becomes a real donation to a real charity in Israel.</p></div>
+        </div>
+        <div class="reveal" style="margin-top:44px">
+          <h2>The handover</h2>
+          <p style="max-width:760px">ACC started with the class of 2026. Today it is run by a new team of student leaders — meet them on the <a href="team.html" class="text-link">Team page</a>, and see what the club has done on the <a href="impact.html" class="text-link">Impact page</a>.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="index.html"><span class="logo-badge"><img class="logo-img" src="images/logo.png" alt="ACC logo"></span><span class="logo-text"><span class="logo-name">ACC</span><span class="logo-sub">AIS Charity Connections</span></span></a>
+          <p class="footer-blurb">A student-led charity club turning school fundraisers into donations for charities in Israel.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="impact.html">Impact</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="team.html">Team</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="donate.html">Donate</a></li>
+            <li><a href="join.html">Join ACC</a></li>
+            <li><a href="charities.html">Our Charities</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-bottom">Founded 2025 at AIS • © 2026 ACC — AIS Charity Connections</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+
+  <!-- Ko-fi button: the real Ko-fi button sits in the header (styles.css docks it there) -->
+  <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+  <script>
+    kofiWidgetOverlay.draw('aischarityconnections', {
+      'type': 'floating-chat',
+      'floating-chat.cssId': 'accnav',
+      'floating-chat.donateButton.text': 'Donate',
+      'floating-chat.donateButton.background-color': '#0FB5A6',
+      'floating-chat.donateButton.text-color': '#fff'
+    }, 'kofiNavSlot');
+  </script>
+</body>
+</html>
