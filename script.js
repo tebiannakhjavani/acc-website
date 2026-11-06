@@ -170,7 +170,12 @@ if (form) {
       const frame = slot.querySelector('iframe[id^="kofi-wo-container"]');
       if (!frame) return;
       try {
-        if (frame.contentDocument && frame.contentDocument.querySelector('.floatingchat-donate-button')) slot.classList.add('kofi-ready');
+        const doc = frame.contentDocument;
+        // Ready only once Ko-fi's button exists, already carries ACC's
+        // injected styling and its iframe has real height. Swapping on
+        // existence alone flashed: the static button vanished a few
+        // hundred ms before Ko-fi's button was actually visible.
+        if (doc && doc.querySelector('.floatingchat-donate-button') && doc.getElementById('accKofiStyle') && frame.offsetHeight > 10) slot.classList.add('kofi-ready');
       } catch (err) { /* button iframe not ready yet — the poller retries */ }
     });
     if (tries >= 24) clearInterval(revealTimer);

@@ -231,10 +231,18 @@ h2{font-size:2.1rem;margin-bottom:16px}
    Ko-fi button has rendered, script.js adds .kofi-ready to the
    slot and this button steps aside. Positioned absolutely so it
    never pushes the widget wrap around while both are present. */
-.kofi-fallback{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#13C2B2,#0A9E93);color:#fff;font-weight:700;font-size:16px;line-height:1.65;padding:13px 30px;border-radius:999px;box-shadow:0 8px 20px rgba(11,165,150,.28);text-decoration:none;white-space:nowrap;transition:box-shadow .25s ease}
+.kofi-fallback{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#13C2B2,#0A9E93);color:#fff;font-weight:700;font-size:16px;line-height:1.65;padding:13px 30px;border-radius:999px;box-shadow:0 8px 20px rgba(11,165,150,.28);text-decoration:none;white-space:nowrap;transition:opacity .3s ease,box-shadow .25s ease}
 .kofi-fallback::before{content:'♥'}
 .kofi-fallback:hover{box-shadow:0 14px 28px rgba(11,165,150,.34)}
 #kofiNavSlot .kofi-fallback{left:auto;right:0}
 #kofiHeroSlot .kofi-fallback{padding:15px 24px}
 #kofiCtaSlot .kofi-fallback{left:50%;transform:translate(-50%,-50%);background:#fff;color:#0F2A44;padding:16px 36px;font-size:17.6px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
-.kofi-slot.kofi-ready .kofi-fallback{display:none}
+.kofi-slot.kofi-ready .kofi-fallback{opacity:0;pointer-events:none}
+/* Ko-fi's button wrap fades in as the static button fades out, so
+   the handover is a crossfade rather than a blink. The wrap only
+   reaches full opacity once its slot is ready (button rendered +
+   styled); the donation panel opens on click, long after that. */
+.kofi-slot .floatingchat-container-wrap,
+.kofi-slot .floatingchat-container-wrap-mobi{opacity:0;transition:opacity .3s ease}
+.kofi-slot.kofi-ready .floatingchat-container-wrap,
+.kofi-slot.kofi-ready .floatingchat-container-wrap-mobi{opacity:1}
