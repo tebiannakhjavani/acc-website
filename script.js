@@ -163,6 +163,16 @@ if (form) {
       if (wrap.style.height === '0px') wrap.style.cssText = 'z-index:10000;';
     });
     styleKofiButtons();
+    // Once the real Ko-fi button exists inside a slot's iframe, the
+    // slot is marked ready and styles.css hides the instant static
+    // button that filled the slot until now.
+    document.querySelectorAll('.kofi-slot:not(.kofi-ready)').forEach(slot => {
+      const frame = slot.querySelector('iframe[id^="kofi-wo-container"]');
+      if (!frame) return;
+      try {
+        if (frame.contentDocument && frame.contentDocument.querySelector('.floatingchat-donate-button')) slot.classList.add('kofi-ready');
+      } catch (err) { /* button iframe not ready yet — the poller retries */ }
+    });
     if (tries >= 24) clearInterval(revealTimer);
   }, 300);
 })();
