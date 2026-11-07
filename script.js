@@ -168,48 +168,6 @@ if (form) {
 })();
 
 // ============================================================
-//  DONATE BUTTON — the visible button in every slot is ACC's
-//  own (styles.css); Ko-fi's button loads invisibly underneath
-//  and is never shown, it only provides the donation panel.
-//  IMPORTANT: Ko-fi's draw() call REPLACES the contents of its
-//  target slot, so the static button written in the HTML is
-//  wiped out the moment the widget loads. The button is
-//  therefore (re)created here, after the draws have run. A
-//  click on it is forwarded to Ko-fi's hidden button, which
-//  opens the panel exactly as if Ko-fi's button had been
-//  clicked; if Ko-fi hasn't loaded, the click is not
-//  intercepted and the link opens the Ko-fi page in a new tab.
-// ============================================================
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.kofi-slot').forEach(slot => {
-    if (!slot.querySelector('.kofi-fallback')) {
-      const a = document.createElement('a');
-      a.className = 'kofi-fallback';
-      a.href = 'https://ko-fi.com/aischarityconnections';
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.textContent = slot.id === 'kofiHeroSlot' ? 'Donate Now' : 'Donate';
-      slot.appendChild(a);
-    }
-  });
-  document.querySelectorAll('.kofi-fallback').forEach(link => {
-    link.addEventListener('click', (e) => {
-      const slot = link.closest('.kofi-slot');
-      if (!slot) return;
-      const frames = slot.querySelectorAll('iframe[id^="kofi-wo-container"]');
-      for (const frame of frames) {
-        const wrap = frame.closest('.floatingchat-container-wrap, .floatingchat-container-wrap-mobi');
-        if (wrap && !wrap.getClientRects().length) continue; // the hidden desktop/mobile variant
-        try {
-          const btn = frame.contentDocument && frame.contentDocument.querySelector('.floatingchat-donate-button');
-          if (btn) { e.preventDefault(); btn.click(); return; }
-        } catch (err) { /* iframe not ready — fall through and let the link open the Ko-fi page */ }
-      }
-    });
-  });
-});
-
-// ============================================================
 //  KO-FI PANELS — Ko-fi's widget is built for ONE button per
 //  page: with several, its panel close (x) button stops
 //  working and panels stack on top of each other. This

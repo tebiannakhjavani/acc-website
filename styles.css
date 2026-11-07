@@ -224,24 +224,3 @@ h2{font-size:2.1rem;margin-bottom:16px}
   .nav-links .kofi-slot{align-self:flex-start}
 }
 
-/* The Donate button — a static ACC-styled button that is in each
-   Ko-fi slot from the first paint and STAYS there: it is the only
-   button visitors ever see. (Swapping it for Ko-fi's own button
-   once that loaded made the button flash and jump, however the
-   handover was timed — so there is no handover anymore.) Ko-fi's
-   own button still loads underneath, invisible, purely so its
-   donation panel exists; script.js forwards this button's clicks
-   to it. If Ko-fi hasn't loaded yet, the click simply follows
-   this link to the Ko-fi page instead. Positioned absolutely so
-   it never pushes the widget wrap around. */
-.kofi-fallback{position:absolute;left:0;top:50%;transform:translateY(-50%);z-index:2;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(135deg,#13C2B2,#0A9E93);color:#fff;font-weight:700;font-size:16px;line-height:1.65;padding:13px 30px;border-radius:999px;box-shadow:0 8px 20px rgba(11,165,150,.28);text-decoration:none;white-space:nowrap;transition:opacity .3s ease,box-shadow .25s ease}
-.kofi-fallback::before{content:'♥'}
-.kofi-fallback:hover{box-shadow:0 14px 28px rgba(11,165,150,.34)}
-#kofiNavSlot .kofi-fallback{left:auto;right:0}
-#kofiHeroSlot .kofi-fallback{padding:15px 24px}
-#kofiCtaSlot .kofi-fallback{left:50%;transform:translate(-50%,-50%);background:#fff;color:#0F2A44;padding:16px 36px;font-size:17.6px;box-shadow:0 10px 24px rgba(0,0,0,.18)}
-/* Ko-fi's own button iframe is never shown — ACC's static button
-   above covers the slot and takes the clicks (forwarded by
-   script.js so the panel still opens). The panel iframe is a
-   different element and is not affected by this. */
-.kofi-slot iframe[id^="kofi-wo-container"]{opacity:0!important;pointer-events:none!important}
