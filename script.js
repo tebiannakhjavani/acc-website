@@ -168,15 +168,30 @@ if (form) {
 })();
 
 // ============================================================
-//  DONATE BUTTON CLICKS — the visible button in every slot is
-//  ACC's own static button (styles.css); Ko-fi's button loads
-//  invisibly underneath and is never shown. A click on ACC's
-//  button is forwarded to Ko-fi's, which opens the donation
-//  panel exactly as if Ko-fi's button had been clicked. If
-//  Ko-fi hasn't loaded yet, the click is not intercepted and
-//  the button's link opens the Ko-fi page in a new tab.
+//  DONATE BUTTON — the visible button in every slot is ACC's
+//  own (styles.css); Ko-fi's button loads invisibly underneath
+//  and is never shown, it only provides the donation panel.
+//  IMPORTANT: Ko-fi's draw() call REPLACES the contents of its
+//  target slot, so the static button written in the HTML is
+//  wiped out the moment the widget loads. The button is
+//  therefore (re)created here, after the draws have run. A
+//  click on it is forwarded to Ko-fi's hidden button, which
+//  opens the panel exactly as if Ko-fi's button had been
+//  clicked; if Ko-fi hasn't loaded, the click is not
+//  intercepted and the link opens the Ko-fi page in a new tab.
 // ============================================================
-(function () {
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.kofi-slot').forEach(slot => {
+    if (!slot.querySelector('.kofi-fallback')) {
+      const a = document.createElement('a');
+      a.className = 'kofi-fallback';
+      a.href = 'https://ko-fi.com/aischarityconnections';
+      a.target = '_blank';
+      a.rel = 'noopener';
+      a.textContent = slot.id === 'kofiHeroSlot' ? 'Donate Now' : 'Donate';
+      slot.appendChild(a);
+    }
+  });
   document.querySelectorAll('.kofi-fallback').forEach(link => {
     link.addEventListener('click', (e) => {
       const slot = link.closest('.kofi-slot');
@@ -192,7 +207,7 @@ if (form) {
       }
     });
   });
-})();
+});
 
 // ============================================================
 //  KO-FI PANELS — Ko-fi's widget is built for ONE button per
