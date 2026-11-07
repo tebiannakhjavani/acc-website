@@ -163,23 +163,35 @@ if (form) {
       if (wrap.style.height === '0px') wrap.style.cssText = 'z-index:10000;';
     });
     styleKofiButtons();
-    // Once the real Ko-fi button exists inside a slot's iframe, the
-    // slot is marked ready and styles.css hides the instant static
-    // button that filled the slot until now.
-    document.querySelectorAll('.kofi-slot:not(.kofi-ready)').forEach(slot => {
-      const frame = slot.querySelector('iframe[id^="kofi-wo-container"]');
-      if (!frame) return;
-      try {
-        const doc = frame.contentDocument;
-        // Ready only once Ko-fi's button exists, already carries ACC's
-        // injected styling and its iframe has real height. Swapping on
-        // existence alone flashed: the static button vanished a few
-        // hundred ms before Ko-fi's button was actually visible.
-        if (doc && doc.querySelector('.floatingchat-donate-button') && doc.getElementById('accKofiStyle') && frame.offsetHeight > 10) slot.classList.add('kofi-ready');
-      } catch (err) { /* button iframe not ready yet — the poller retries */ }
-    });
     if (tries >= 24) clearInterval(revealTimer);
   }, 300);
+})();
+
+// ============================================================
+//  DONATE BUTTON CLICKS — the visible button in every slot is
+//  ACC's own static button (styles.css); Ko-fi's button loads
+//  invisibly underneath and is never shown. A click on ACC's
+//  button is forwarded to Ko-fi's, which opens the donation
+//  panel exactly as if Ko-fi's button had been clicked. If
+//  Ko-fi hasn't loaded yet, the click is not intercepted and
+//  the button's link opens the Ko-fi page in a new tab.
+// ============================================================
+(function () {
+  document.querySelectorAll('.kofi-fallback').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const slot = link.closest('.kofi-slot');
+      if (!slot) return;
+      const frames = slot.querySelectorAll('iframe[id^="kofi-wo-container"]');
+      for (const frame of frames) {
+        const wrap = frame.closest('.floatingchat-container-wrap, .floatingchat-container-wrap-mobi');
+        if (wrap && !wrap.getClientRects().length) continue; // the hidden desktop/mobile variant
+        try {
+          const btn = frame.contentDocument && frame.contentDocument.querySelector('.floatingchat-donate-button');
+          if (btn) { e.preventDefault(); btn.click(); return; }
+        } catch (err) { /* iframe not ready — fall through and let the link open the Ko-fi page */ }
+      }
+    });
+  });
 })();
 
 // ============================================================
