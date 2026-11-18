@@ -107,6 +107,7 @@ h2{font-size:2.1rem;margin-bottom:16px}
 .card p{color:var(--muted)}
 .event-card{padding:0;overflow:hidden}
 .event-card img{aspect-ratio:16/10;object-fit:cover;width:100%;transition:transform .6s var(--ease)}
+.event-card img.logo-fit{object-fit:contain;background:#fff;padding:14px}
 .event-card:hover img{transform:scale(1.05)}
 .event-card .card-body{padding:20px 22px 24px}
 .event-card .meta{color:var(--turq-dark);font-weight:700;margin-bottom:8px}
